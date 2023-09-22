@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LargeButtonView">
+        <attr name="setBackground" format="reference|color"/>
+        <attr name="setTitle" format="string"/>
+        <attr name="setTitleColor" format="string"/>
+        <attr name="setArrow" format="reference"/>
+        <attr name="setArrowColor" format="string"/>
+        <attr name="setDirection" format="string" />
+    </declare-styleable>
+</resources>
