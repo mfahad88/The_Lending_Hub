@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.OnBoardThreeFragment">
+    android:translationZ="2dp"
+    tools:context=".fragment.OnBoardTwoFragment">
+    <include layout="@layout/customer_onboard"/>
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/loans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/investment_"
+        style="@style/investment_"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/applying_fo"
+        android:textAppearance="@style/applying_fo"
+        android:lineSpacingExtra="-16sp"
+        android:gravity="center_horizontal|top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/setup_your_"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center_horizontal|bottom"
+        android:lineSpacingExtra="5sp"
+        android:translationZ="2dp"
+        android:text="@string/complete_yo"
+        style="@style/complete_yo"
+        android:translationY="2.34sp"
+        app:layout_constraintEnd_toEndOf="@+id/investment_"
+        app:layout_constraintStart_toStartOf="@+id/investment_"
+        app:layout_constraintTop_toBottomOf="@+id/investment_" />
+
+
+    <com.example.thelendinghub.custom.LargeButton
+        android:id="@+id/buttonPrevious"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:setArrow="@drawable/arrow_icon_back"
+        app:setArrowColor="#31373D"
+        app:setBackground="@drawable/button_previous"
+        app:setDirection="rtl"
+        app:setTitle="@string/previous"
+        app:setTitleColor="#31373D" />
+
+
+    <com.example.thelendinghub.custom.LargeButton
+        android:id="@+id/buttonNext"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:setArrow="@drawable/arrow_icon"
+        app:setArrowColor="#FAE345"
+        app:setBackground="@drawable/button_next"
+        app:setDirection="ltr"
+        app:setTitle="@string/next"
+        app:setTitleColor="#FAE345" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

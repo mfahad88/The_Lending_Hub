@@ -32,7 +32,7 @@ class OnBoardOneFragment : Fragment() {
         var view=inflater.inflate(R.layout.fragment_on_board_one, container, false)
         initViews(view)
         buttonPrim.setOnClickListener{
-            dataPassListener.onDataPass("second")
+            dataPassListener.onDataPass("two")
         }
         return view
     }
