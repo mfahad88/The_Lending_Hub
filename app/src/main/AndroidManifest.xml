@@ -11,16 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TheLendingHub"
-
         tools:targetApi="31">
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.OnBoardActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.HomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true"

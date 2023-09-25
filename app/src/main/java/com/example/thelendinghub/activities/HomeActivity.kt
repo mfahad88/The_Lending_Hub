@@ -17,7 +17,6 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         initViews()
-      //  Toast.makeText(this,Utils.getScreenDpi(this).toString(),Toast.LENGTH_SHORT).show()
         Utils.getScreenDensity(this)
         buttonRegister.setOnClickListener { v->
             startActivity(Intent(v.context,OnBoardActivity::class.java))

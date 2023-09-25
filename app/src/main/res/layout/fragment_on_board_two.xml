@@ -4,87 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_ob_background"
     android:translationZ="2dp"
     tools:context=".fragment.OnBoardTwoFragment">
-    <include layout="@layout/customer_onboard"/>
+
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
         android:src="@drawable/investment"
-
+        app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
 
     <TextView
-        android:id="@+id/investment_"
+        android:id="@+id/applying_fo"
         style="@style/investment_"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="70dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="-16sp"
         android:text="@string/investment_"
         android:translationZ="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline20"
+        app:layout_constraintEnd_toStartOf="@+id/guideline22"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+
 
     <TextView
-        android:id="@+id/setup_your_"
+        android:id="@+id/complete_yo"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="30dp"
         android:gravity="center_horizontal|bottom"
         android:lineSpacingExtra="5sp"
-        android:translationZ="2dp"
         android:text="@string/setup_your_"
         android:textAppearance="@style/setup_your_"
         android:translationY="2.34sp"
-        app:layout_constraintEnd_toEndOf="@+id/investment_"
-        app:layout_constraintStart_toStartOf="@+id/investment_"
-        app:layout_constraintTop_toBottomOf="@+id/investment_" />
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline23"
+        app:layout_constraintEnd_toStartOf="@+id/guideline22"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
+        app:layout_constraintTop_toTopOf="@+id/guideline20"
+        app:layout_constraintVertical_bias="0.581" />
 
 
     <com.example.thelendinghub.custom.LargeButton
         android:id="@+id/buttonPrevious"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="260dp"
-        android:layout_marginBottom="28dp"
-        android:text="com.example.thelendinghub.custom.LargeButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:setArrow="@drawable/arrow_icon"
-        app:setArrowColor="#FAE345"
-        app:setBackground="@drawable/button_prim"
-        app:setTitle="@string/apply_for_l"
-        app:setTitleColor="#FAE345" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline26"
+        app:layout_constraintEnd_toStartOf="@+id/guideline24"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
+        app:layout_constraintTop_toTopOf="@+id/guideline25"
+        app:setArrow="@drawable/arrow_icon_back"
+        app:setArrowColor="#31373D"
+        app:setBackground="@drawable/button_previous"
+        app:setDirection="rtl"
+        app:setTitle="@string/previous"
+        app:setTitleColor="#31373D" />
 
     <com.example.thelendinghub.custom.LargeButton
         android:id="@+id/buttonNext"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:text="com.example.thelendinghub.custom.LargeButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:elevation="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline26"
+        app:layout_constraintEnd_toStartOf="@+id/guideline22"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="@+id/guideline24"
+        app:layout_constraintTop_toTopOf="@+id/guideline25"
         app:setArrow="@drawable/arrow_icon"
         app:setArrowColor="#FAE345"
-        app:setBackground="@drawable/button_prim"
-        app:setTitle="@string/apply_for_l"
+        app:setBackground="@drawable/button_next"
+        app:setDirection="ltr"
+        app:setTitle="@string/next"
         app:setTitleColor="#FAE345" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".88" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

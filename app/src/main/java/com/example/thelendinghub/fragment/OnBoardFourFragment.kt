@@ -1,11 +1,14 @@
 package com.example.thelendinghub.fragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.thelendinghub.R
+import com.example.thelendinghub.custom.LargeButton
+import com.example.thelendinghub.custom.OnDataPass
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,43 +21,39 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class OnBoardFourFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var dataPassListener: OnDataPass
+    lateinit var buttonNext: LargeButton
+    lateinit var buttonPrevious: LargeButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_on_board_four, container, false)
+        var view=inflater.inflate(R.layout.fragment_on_board_four, container, false)
+        initViews(view)
+        buttonPrevious.setOnClickListener {
+            dataPassListener.onDataPass("three")
+        }
+        buttonNext.setOnClickListener {
+            dataPassListener.onDataPass("register")
+        }
+        // Inflate the layout for this fragment
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment OnBoardFourFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OnBoardFourFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun initViews(view: View) {
+        buttonNext=view.findViewById(R.id.buttonNext)
+        buttonPrevious=view.findViewById(R.id.buttonPrevious)
     }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            dataPassListener = context as OnDataPass
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$context must implement OnDataPass")
+        }
+    }
+
 }

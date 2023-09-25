@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction
 
 import com.example.thelendinghub.R
 import com.example.thelendinghub.custom.OnDataPass
+import com.example.thelendinghub.fragment.OnBoardFourFragment
 import com.example.thelendinghub.fragment.OnBoardOneFragment
 import com.example.thelendinghub.fragment.OnBoardThreeFragment
 import com.example.thelendinghub.fragment.OnBoardTwoFragment
@@ -46,13 +47,15 @@ class OnBoardActivity : BaseActivity(),OnDataPass{
     }
 
     override fun onDataPass(data: String?) {
-        Toast.makeText(this,data,Toast.LENGTH_SHORT).show()
+
         if(data.equals("one",true)){
             loadFragment(OnBoardOneFragment())
         } else if(data.equals("two",true)){
             loadFragment(OnBoardTwoFragment())
         } else if(data.equals("three",true)){
             loadFragment(OnBoardThreeFragment())
+        }else if(data.equals("four",true)){
+            loadFragment(OnBoardFourFragment())
         }
     }
 }
