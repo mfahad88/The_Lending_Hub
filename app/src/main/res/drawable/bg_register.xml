@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item>
+        <shape>
+            <solid android:color="#EEF4F9"/>
+            <size android:height="300dp"/>
+        </shape>
+    </item>
+    <item android:gravity="top"
+        android:drawable="@drawable/register_top_logo"
+        android:left="50dp"
+       />
 </layer-list>

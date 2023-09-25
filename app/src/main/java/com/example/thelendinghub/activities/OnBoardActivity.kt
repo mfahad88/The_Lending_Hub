@@ -1,6 +1,7 @@
 package com.example.thelendinghub.activities
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -13,10 +14,10 @@ import androidx.fragment.app.FragmentTransaction
 
 import com.example.thelendinghub.R
 import com.example.thelendinghub.custom.OnDataPass
-import com.example.thelendinghub.fragment.OnBoardFourFragment
-import com.example.thelendinghub.fragment.OnBoardOneFragment
-import com.example.thelendinghub.fragment.OnBoardThreeFragment
-import com.example.thelendinghub.fragment.OnBoardTwoFragment
+import com.example.thelendinghub.fragment.onboard.OnBoardFourFragment
+import com.example.thelendinghub.fragment.onboard.OnBoardOneFragment
+import com.example.thelendinghub.fragment.onboard.OnBoardThreeFragment
+import com.example.thelendinghub.fragment.onboard.OnBoardTwoFragment
 
 
 class OnBoardActivity : BaseActivity(),OnDataPass{
@@ -56,6 +57,9 @@ class OnBoardActivity : BaseActivity(),OnDataPass{
             loadFragment(OnBoardThreeFragment())
         }else if(data.equals("four",true)){
             loadFragment(OnBoardFourFragment())
+        }else if(data.equals("register",true)){
+            finish()
+            startActivity(Intent(this,RegisterActivity::class.java))
         }
     }
 }

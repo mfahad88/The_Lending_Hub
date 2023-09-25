@@ -53,4 +53,14 @@
     <string name="the_lending">
     The Lending Hub is the fastest loan application and investment app in SA.\n\nExplore our app to be surprised ...
     </string>
+
+    <string name="register_signup">
+    Register
+    </string>
+    <string name="share_your_">
+    Share your registration preference below. \n\nThe app allows you to sign up as one of the two \nprovided options. Please select one to proceed.
+    </string>
+    <string name="borrower">
+        Borrower
+    </string>
 </resources>

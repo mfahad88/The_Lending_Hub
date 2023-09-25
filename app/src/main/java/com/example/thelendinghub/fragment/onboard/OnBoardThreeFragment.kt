@@ -1,16 +1,14 @@
-package com.example.thelendinghub.fragment
+package com.example.thelendinghub.fragment.onboard
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.thelendinghub.R
 import com.example.thelendinghub.custom.LargeButton
 import com.example.thelendinghub.custom.OnDataPass
-
-
 
 /**
  * A simple [Fragment] subclass.

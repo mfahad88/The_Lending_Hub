@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_ob_background"
     android:translationZ="2dp"
-    tools:context=".fragment.OnBoardTwoFragment">
+    tools:context=".fragment.onboard.OnBoardTwoFragment">
 
     <ImageView
         android:id="@+id/imageView8"
