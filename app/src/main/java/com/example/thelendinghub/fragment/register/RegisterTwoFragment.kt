@@ -52,11 +52,7 @@ class RegisterTwoFragment : Fragment() {
             if(!editIdNumber.text.isEmpty() && !editCellNumber.text.isEmpty()
                 && !editCellNumber.text.isEmpty()){
                 if(linearLayoutId.isSelected){
-                   val bottomSheetDialog=BottomSheetDialog(v.context)
-                    bottomSheetDialog.setContentView(R.layout.bottom_sheet_error)
-                    val buttonContinue =bottomSheetDialog.findViewById<LargeButton>(R.id.buttonContinue)
-                    buttonContinue?.setOnClickListener { bottomSheetDialog.dismiss()}
-                    bottomSheetDialog.show()
+                    showBottomSheet(v)
                 }
             }
         }
@@ -84,6 +80,14 @@ class RegisterTwoFragment : Fragment() {
 
         })
         return view
+    }
+
+    private fun showBottomSheet(v: View) {
+        val bottomSheetDialog = BottomSheetDialog(v.context)
+        bottomSheetDialog.setContentView(R.layout.bottom_sheet_error)
+        val buttonContinue = bottomSheetDialog.findViewById<LargeButton>(R.id.buttonContinue)
+        buttonContinue?.setOnClickListener { bottomSheetDialog.dismiss() }
+        bottomSheetDialog.show()
     }
 
     private fun initViews(view: View) {
