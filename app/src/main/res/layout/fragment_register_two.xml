@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_register"
     tools:context="com.example.thelendinghub.activities.RegisterActivity">
 
     <TextView
@@ -123,7 +124,7 @@
         android:paddingLeft="20dp"
         android:paddingTop="13dp"
         android:paddingRight="20dp"
-        android:paddingBottom="13dp"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline43"
         app:layout_constraintEnd_toStartOf="@+id/guideline29"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
@@ -145,6 +146,7 @@
             android:background="@null"
             android:gravity="top"
             android:hint="@string/some_id"
+            android:maxLength="10"
             android:inputType="number"
             android:lineSpacingExtra="-2sp"
             android:textAppearance="@style/some_id" />
@@ -182,7 +184,7 @@
             android:background="@null"
             android:gravity="top"
             android:hint="@string/some_cell"
-            android:inputType="number"
+            android:inputType="phone"
             android:lineSpacingExtra="-2sp"
             android:textAppearance="@style/some_cell" />
     </LinearLayout>
@@ -222,6 +224,10 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:gravity="top"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:hint="@string/please_sele"
                 android:inputType="number"
                 android:lineSpacingExtra="-2sp"
@@ -252,15 +258,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/please_use_"
-        android:textAppearance="@style/please_use_"
-        android:lineSpacingExtra="5sp"
-        android:translationY="-2.44sp"
+        android:background="@drawable/yellow_bar"
         android:gravity="top"
+        android:lineSpacingExtra="5sp"
+        android:paddingLeft="15dp"
         android:paddingTop="6dp"
         android:paddingBottom="6dp"
-        android:paddingLeft="15dp"
-        android:background="@drawable/yellow_bar"
+        android:text="@string/please_use_"
+        android:textAppearance="@style/please_use_"
+        android:translationY="-2.44sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline41"
         app:layout_constraintEnd_toStartOf="@+id/guideline29"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
@@ -271,5 +277,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54" />
+        app:layout_constraintGuide_percent="0.52" />
 </androidx.constraintlayout.widget.ConstraintLayout>

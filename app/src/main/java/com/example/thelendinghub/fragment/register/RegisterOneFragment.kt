@@ -1,5 +1,6 @@
 package com.example.thelendinghub.fragment.register
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.thelendinghub.R
 import com.example.thelendinghub.custom.LargeButton
+import com.example.thelendinghub.custom.OnDataPass
 
 
 class RegisterOneFragment : Fragment() {
@@ -16,6 +18,7 @@ class RegisterOneFragment : Fragment() {
     lateinit var constraintBorrower:ConstraintLayout
     lateinit var constraintLender:ConstraintLayout
     lateinit var buttonProceed:LargeButton
+    lateinit var dataPassListener: OnDataPass
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,13 +36,22 @@ class RegisterOneFragment : Fragment() {
             constraintBorrower.isSelected=true
             constraintLender.isSelected=false
         }
-        buttonProceed.setOnClickListener {  }
+        buttonProceed.setOnClickListener { dataPassListener.onDataPass("two") }
         return view
     }
 
     private fun initViews(view: View) {
         constraintBorrower=view.findViewById(R.id.constraintBorrower)
         constraintLender=view.findViewById(R.id.constraintLender)
+        buttonProceed=view.findViewById(R.id.buttonProceed)
+    }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            dataPassListener = context as OnDataPass
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$context must implement OnDataPass")
+        }
     }
 
 }

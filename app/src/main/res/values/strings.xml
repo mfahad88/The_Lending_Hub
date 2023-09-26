@@ -104,4 +104,19 @@
     <string name="please_use_">
     Please use the number associated with Abshar.
     </string>
+    <string name="error_detec">
+    1 error detected in form
+    </string>
+    <string name="invalid_num">
+    Invalid Number ID
+    </string>
+    <string name="your_entere">
+    Your entered Iqama didn’t turn out to be valid. Please enter a valid Iqama to proceed to verification of your credentials.
+    </string>
+    <string name="the_incorre">
+    The incorrect field is highlighted as red.
+    </string>
+    <string name="reg_continue">
+    Continue
+    </string>
 </resources>

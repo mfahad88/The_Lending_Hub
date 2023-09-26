@@ -1,60 +1,105 @@
 package com.example.thelendinghub.fragment.register
 
+import android.app.DatePickerDialog
+import android.app.DatePickerDialog.OnDateSetListener
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import com.example.thelendinghub.R
+import com.example.thelendinghub.custom.LargeButton
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RegisterTwoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
+
+
 class RegisterTwoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    lateinit var editIdNumber:EditText
+    lateinit var editCellNumber:EditText
+    lateinit var editDob:EditText
+    lateinit var buttonProceed:LargeButton
+    lateinit var myCalendar:Calendar
+    lateinit var linearLayoutId:LinearLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register_two, container, false)
-    }
+        var view=inflater.inflate(R.layout.fragment_register_two, container, false)
+        initViews(view)
+        myCalendar = Calendar.getInstance()
+        val date =
+            OnDateSetListener { view, year, month, day ->
+                myCalendar[Calendar.YEAR] = year
+                myCalendar[Calendar.MONTH] = month
+                myCalendar[Calendar.DAY_OF_MONTH] = day
+                updateLabel()
+            }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterTwoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegisterTwoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        buttonProceed.setOnClickListener {v->
+            if(!editIdNumber.text.isEmpty() && !editCellNumber.text.isEmpty()
+                && !editCellNumber.text.isEmpty()){
+                if(linearLayoutId.isSelected){
+                   val bottomSheetDialog=BottomSheetDialog(v.context)
+                    bottomSheetDialog.setContentView(R.layout.bottom_sheet_error)
+                    val buttonContinue =bottomSheetDialog.findViewById<LargeButton>(R.id.buttonContinue)
+                    buttonContinue?.setOnClickListener { bottomSheetDialog.dismiss()}
+                    bottomSheetDialog.show()
                 }
             }
+        }
+        editDob.setOnClickListener {
+            DatePickerDialog(view.context,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show()
+        }
+
+        editIdNumber.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (text!!.length>0) {
+                    if(!text?.get(0).toString().equals("1")){
+                        linearLayoutId.isSelected=true
+                    }else{
+                        linearLayoutId.isSelected=false
+                    }
+
+                }else{
+                    linearLayoutId.isSelected=false
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {}
+
+        })
+        return view
     }
+
+    private fun initViews(view: View) {
+        editIdNumber=view.findViewById(R.id.editIdNumber)
+        editCellNumber=view.findViewById(R.id.editCellNumber)
+        editDob=view.findViewById(R.id.editDob)
+        buttonProceed=view.findViewById(R.id.buttonProceed)
+        linearLayoutId=view.findViewById(R.id.linearLayoutId)
+
+    }
+
+    private fun updateLabel() {
+        val myFormat = "MMMM dd,yyyy"
+        val dateFormat = SimpleDateFormat(myFormat, Locale.US)
+        editDob.setText(dateFormat.format(myCalendar.time))
+    }
+
+
 }
