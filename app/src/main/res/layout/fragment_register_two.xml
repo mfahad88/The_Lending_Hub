@@ -206,26 +206,28 @@
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
-        <TextView
-            android:id="@+id/date_of_bir"
-            android:textAppearance="@style/date_of_bir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:lineSpacingExtra="0sp"
-            android:text="@string/date_of_bir" />
 
-        <EditText
-            android:id="@+id/editDob"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:gravity="top"
-            android:hint="@string/please_sele"
-            android:inputType="number"
-            android:lineSpacingExtra="-2sp"
-            android:textAppearance="@style/please_sele" />
+            <TextView
+                android:id="@+id/date_of_bir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:lineSpacingExtra="0sp"
+                android:text="@string/date_of_bir"
+                android:textAppearance="@style/date_of_bir" />
+
+            <EditText
+                android:id="@+id/editDob"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="@string/please_sele"
+                android:inputType="number"
+                android:lineSpacingExtra="-2sp"
+                android:textAppearance="@style/please_sele" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -233,14 +235,41 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_calendar"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:src="@drawable/icon_calendar" />
         </LinearLayout>
     </LinearLayout>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.76" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/please_use_"
+        android:textAppearance="@style/please_use_"
+        android:lineSpacingExtra="5sp"
+        android:translationY="-2.44sp"
+        android:gravity="top"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/yellow_bar"
+        app:layout_constraintBottom_toTopOf="@+id/guideline41"
+        app:layout_constraintEnd_toStartOf="@+id/guideline29"
+        app:layout_constraintStart_toStartOf="@+id/guideline28"
+        app:layout_constraintTop_toTopOf="@+id/guideline50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
 </androidx.constraintlayout.widget.ConstraintLayout>
