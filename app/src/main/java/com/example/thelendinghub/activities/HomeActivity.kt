@@ -2,11 +2,9 @@ package com.example.thelendinghub.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.Toolbar
 import com.example.thelendinghub.R
+
 import com.example.thelendinghub.custom.Utils
 
 

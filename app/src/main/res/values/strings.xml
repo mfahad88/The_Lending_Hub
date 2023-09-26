@@ -60,7 +60,45 @@
     <string name="share_your_">
     Share your registration preference below. \n\nThe app allows you to sign up as one of the two \nprovided options. Please select one to proceed.
     </string>
+    <string name="share_your_one">
+    Share your credentials, registration preference\nand then proceed to verification.
+    </string>
     <string name="borrower">
         Borrower
+    </string>
+
+    <string name="you_can_app">
+    You can apply for loans and borrow funds.
+    </string>
+    <string name="lender">
+    Lender
+    </string>
+    <string name="invest_into">
+    Invest into multiple loan opportunities and get the best ROI.
+    </string>
+    <string name="proceed">
+    Proceed
+    </string>
+    <string name="id_number">
+    ID Number
+    </string>
+    <string name="some_id">
+    1000000000
+    </string>
+
+    <string name="cell_number">
+    Cell Number
+    </string>
+    <string name="some_cell">
+    +966 | 50 000 0000
+    </string>
+    <string name="date_of_bir">
+    Date of Birth
+    </string>
+    <string name="please_sele">
+    Please select a date
+    </string>
+    <string name="proceed_to_verification">
+    Proceed to Verification
     </string>
 </resources>

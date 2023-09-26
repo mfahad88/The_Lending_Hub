@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <size android:width="175dp"
+                        android:height="218dp"/>
+                    <solid android:color="#FFFFFF"/>
+                    <corners android:radius="15dp"/>
+                    <stroke android:color="#0F042D" android:width="2dp"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/cb_checked" android:height="24dp"
+                android:width="24dp"
+                android:gravity="end"
+                android:top="20dp"
+                android:right="20dp"/>
+
+            <item android:drawable="@drawable/icon_lender_selected" android:height="24dp"
+                android:width="24dp"
+                android:gravity="start"
+                android:top="20dp"
+                android:left="20dp"/>
+        </layer-list>
+    </item>
+
+    <item android:state_selected="false">
+        <layer-list>
+            <item>
+                <shape>
+                    <size android:width="175dp"
+                        android:height="218dp"/>
+                    <solid android:color="#EEF4F9"/>
+                    <corners android:radius="15dp"/>
+                    <stroke android:color="#DCE5EC" android:width="2dp"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/cb_unchecked"
+                android:height="24dp"
+                android:width="24dp"
+                android:gravity="end"
+                android:top="20dp"
+                android:right="20dp"/>
+
+            <item android:drawable="@drawable/icon_lender_unselected"
+                android:height="24dp"
+                android:width="24dp"
+                android:gravity="start"
+                android:top="20dp"
+                android:left="20dp"/>
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item>
+                <shape>
+                    <size android:width="175dp"
+                        android:height="218dp"/>
+                    <solid android:color="#EEF4F9"/>
+                    <corners android:radius="15dp"/>
+                    <stroke android:color="#DCE5EC" android:width="2dp"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/cb_unchecked"
+                android:height="24dp"
+                android:width="24dp"
+                android:gravity="end"
+                android:top="20dp"
+                android:right="20dp"/>
+        </layer-list>
+    </item>
+</selector>

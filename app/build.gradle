@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.thelendinghub"
+        applicationId "com.jamipartner.thelendinghub"
         minSdk 24
         targetSdk 33
         versionCode 1

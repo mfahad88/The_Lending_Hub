@@ -5,14 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.thelendinghub.R
+import com.example.thelendinghub.custom.LargeButton
 
 
 class RegisterOneFragment : Fragment() {
 
 
-    lateinit var cardBorrower:CardView
+    lateinit var constraintBorrower:ConstraintLayout
+    lateinit var constraintLender:ConstraintLayout
+    lateinit var buttonProceed:LargeButton
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,12 +23,23 @@ class RegisterOneFragment : Fragment() {
         // Inflate the layout for this fragment
         var view=inflater.inflate(R.layout.fragment_register_one, container, false)
         initViews(view)
-        cardBorrower.isSelected=false
+        constraintBorrower.isSelected=true
+        constraintLender.setOnClickListener {
+            constraintLender.isSelected=true
+            constraintBorrower.isSelected=false
+        }
+
+        constraintBorrower.setOnClickListener {
+            constraintBorrower.isSelected=true
+            constraintLender.isSelected=false
+        }
+        buttonProceed.setOnClickListener {  }
         return view
     }
 
     private fun initViews(view: View) {
-        cardBorrower=view.findViewById(R.id.cardBorrower)
+        constraintBorrower=view.findViewById(R.id.constraintBorrower)
+        constraintLender=view.findViewById(R.id.constraintLender)
     }
 
 }

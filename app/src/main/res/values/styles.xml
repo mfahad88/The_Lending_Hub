@@ -108,5 +108,51 @@
         <item name="android:textColor">#0F042D</item>
     </style>
 
+    <style name="you_can_app">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#697885</item>
+    </style>
+    <style name="lender">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#697885</item>
+    </style>
+    <style name="invest_into">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#697885</item>
+    </style>
+    <style name="id_number">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#31373D</item>
+    </style>
+    <style name="some_id">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#DCE5EC</item>
+    </style>
 
+    <style name="cell_number">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#31373D</item>
+    </style>
+
+    <style name="some_cell">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#31373D</item>
+    </style>
+    <style name="date_of_bir">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#31373D</item>
+    </style>
+    <style name="please_sele">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#DCE5EC</item>
+    </style>
 </resources>
